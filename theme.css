@@ -89,13 +89,13 @@
   font-family: Helvetica;
   font-weight: 700;
   font-style: normal;
-  src: url("//thepilotnetwork.com/cdn/fonts/helvetica/helvetica_n7.39bee04bd277a9c4e94e2fd42d53f4e3c0afb8a5.woff2?h1=dGhlcGlsb3RuZXR3b3JrLmNvbQ&h2=dGhlcGlsb3RuZXR3b3JrLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=7d583eae0472868bbe296ccbcb851d475907f04f02c594a997611b982b56c749") format("woff2"), url("//thepilotnetwork.com/cdn/fonts/helvetica/helvetica_n7.b95359461a6788d5549e702cb2123bc40c227e49.woff?h1=dGhlcGlsb3RuZXR3b3JrLmNvbQ&h2=dGhlcGlsb3RuZXR3b3JrLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=88f0d2291b2a1eb5d6099e506cd5e332899fa0d4d3e3c2d0e96f456a10253fb0") format("woff"); }
+  src: url("helvetica.woff2") format("woff2"), url("helvetica.woff") format("woff"); }
 
 @font-face {
   font-family: Helvetica;
   font-weight: 400;
   font-style: normal;
-  src: url("//thepilotnetwork.com/cdn/fonts/helvetica/helvetica_n4.fe093fe9ca22a15354813c912484945a36b79146.woff2?h1=dGhlcGlsb3RuZXR3b3JrLmNvbQ&h2=dGhlcGlsb3RuZXR3b3JrLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=272d5eea6734c683af8951f8ae3f1db4ccfc4abe4d7ea4ac26a5a8560630519a") format("woff2"), url("//thepilotnetwork.com/cdn/fonts/helvetica/helvetica_n4.8bddb85c18a0094c427a9bf65dee963ad88de4e8.woff?h1=dGhlcGlsb3RuZXR3b3JrLmNvbQ&h2=dGhlcGlsb3RuZXR3b3JrLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=959ca56165c1cd3a6394270130087344f7593f167c98ad3435f2f02053e5b9f0") format("woff"); }
+  src: url("helvetica_n4.fe093fe9ca22a15354813c912484945a36b79146.woff2") format("woff2"), url("//thepilotnetwork.com/cdn/fonts/helvetica/helvetica_n4.8bddb85c18a0094c427a9bf65dee963ad88de4e8.woff?h1=dGhlcGlsb3RuZXR3b3JrLmNvbQ&h2=dGhlcGlsb3RuZXR3b3JrLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=959ca56165c1cd3a6394270130087344f7593f167c98ad3435f2f02053e5b9f0") format("woff"); }
 
 @font-face {
   font-family: Helvetica;
