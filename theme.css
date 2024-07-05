@@ -6737,7 +6737,7 @@ hr {
     height: 225px; }
   .image-bar--medium .image-bar__content, .image-bar--medium .image-bar__item {
     height: 417px;
-    height: 65vh;
+    height: 62vh;
     }
   .image-bar--large .image-bar__content, .image-bar--large .image-bar__item {
     height: 488px; }
