@@ -6100,7 +6100,7 @@ hr {
     .site-footer {
       padding-bottom: 35px; } }
   .site-footer h4, .site-footer .h4 {
-    margin-bottom: 12.5px; }
+    margin-bottom: 12.5px; font-size: 1.3em; }
     @media only screen and (min-width: 750px) {
       .site-footer h4, .site-footer .h4 {
         min-height: 1.26667em;
