@@ -166,7 +166,7 @@ window.ShopifyPay.apiHost = "shop.app\/pay";</script>
   }
 }
 </style><script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');</script>
-  
+  <!--
   <script>
     (function(w, d, t, h, s, n) {
       w.FlodeskObject = n;
@@ -188,13 +188,14 @@ window.ShopifyPay.apiHost = "shop.app\/pay";</script>
       f.parentNode.insertBefore(sn, f);
     })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
   </script>  
+	
   <script>
     window.fd('form', {
       formId: '64e9efdec2836fce4ecfb066'
     });
   </script>
 
-  
+  -->
 <link href="https://cdn.shopify.com/extensions/7ce826b5-851a-434c-8203-f66a474a8512/d-faq-page-9/assets/ddshop-faq.css" rel="stylesheet" type="text/css" media="all">
 <link href="https://monorail-edge.shopifysvc.com" rel="dns-prefetch">
 <script>(function(){if ("sendBeacon" in navigator && "performance" in window) {var session_token = document.cookie.match(/_shopify_s=([^;]*)/);function handle_abandonment_event(e) {var entries = performance.getEntries().filter(function(entry) {return /monorail-edge.shopifysvc.com/.test(entry.name);});if (!window.abandonment_tracked && entries.length === 0) {window.abandonment_tracked = true;var currentMs = Date.now();var navigation_start = performance.timing.navigationStart;var payload = {shop_id: 47193063573,url: window.location.href,navigation_start,duration: currentMs - navigation_start,session_token: session_token && session_token.length === 2 ? session_token[1] : "",page_type: "index"};window.navigator.sendBeacon("https://monorail-edge.shopifysvc.com/v1/produce", JSON.stringify({schema_id: "online_store_buyer_site_abandonment/1.1",payload: payload,metadata: {event_created_at_ms: currentMs,event_sent_at_ms: currentMs}}));}}window.addEventListener('pagehide', handle_abandonment_event);}}());</script>
