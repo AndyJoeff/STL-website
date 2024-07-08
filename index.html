@@ -551,55 +551,6 @@ for (var attr in meta) {
     });
   }
 })();</script>
-	<!-- Add this script tag in the head section -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script>
-  const weatherConditions = [
-    { description: 'Sunny', animation: 'https://assets2.lottiefiles.com/private_files/lf30_lz5ryzmj.json', minTemp: 70, maxTemp: 90 },
-    { description: 'Cloudy', animation: 'https://assets2.lottiefiles.com/private_files/lf30_y94dl41n.json', minTemp: 60, maxTemp: 80 },
-    { description: 'Rainy', animation: 'https://assets2.lottiefiles.com/private_files/lf30_kflsej6d.json', minTemp: 50, maxTemp: 70 },
-    { description: 'Thunderstorm', animation: 'https://assets2.lottiefiles.com/private_files/lf30_tkhuq1bs.json', minTemp: 55, maxTemp: 75 }
-  ];
-
-  function getRandomWeather() {
-    const condition = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
-    const currentTemp = Math.floor(Math.random() * (condition.maxTemp - condition.minTemp + 1) + condition.minTemp);
-    return { ...condition, currentTemp };
-  }
-
-  function loadLottieAnimation(elementId, animationPath) {
-    lottie.loadAnimation({
-      container: document.getElementById(elementId),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: animationPath
-    });
-  }
-
-  function updateWeather() {
-    const currentWeather = getRandomWeather();
-    document.getElementById('current-weather').textContent = `${currentWeather.description}, ${currentWeather.currentTemp}°F`;
-    
-    loadLottieAnimation('current-weather-icon', currentWeather.animation);
-
-    for (let i = 1; i <= 5; i++) {
-      const forecastWeather = getRandomWeather();
-      const dayElement = document.getElementById(`day-${i}`);
-      const iconElement = document.getElementById(`forecast-icon-${i}`);
-      const tempElement = document.getElementById(`forecast-temp-${i}`);
-
-      dayElement.textContent = new Date(Date.now() + i * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { weekday: 'long' });
-      tempElement.textContent = `${forecastWeather.maxTemp}°F / ${forecastWeather.minTemp}°F`;
-
-      loadLottieAnimation(iconElement.id, forecastWeather.animation);
-    }
-  }
-
-  setInterval(updateWeather, 5000); // Update weather every 5 seconds
-  updateWeather(); // Initial call to display weather
-</script>
 </head>
 
 <body class="template-index">
@@ -1339,43 +1290,76 @@ for (var attr in meta) {
     <h2>Weather Updates</h2>
     <div class="current-weather">
       <div class="weather-icon">
-        <div id="current-weather-icon"></div>
+        <img id="current-weather-icon" src="https://cdn-icons-png.flaticon.com/128/4814/4814268.png" alt="Current Weather">
       </div>
       <div class="weather-details">
         <h3 id="current-location">St. Louis, MO</h3>
-        <p id="current-weather">Sunny, 79°F</p>
+        <p id="current-weather">Sunny, 85°F</p>
       </div>
     </div>
     <div class="weather-forecast" id="forecast-container">
-      <div class="forecast-day">
-        <h4 id="day-1">Tuesday</h4>
-        <div id="forecast-icon-1" class="forecast-icon"></div>
-        <p id="forecast-temp-1">80°F / 60°F</p>
+      <div class="forecast-day" id="forecast-day-1">
+        <h4 id="day-1">Monday</h4>
+        <img id="forecast-icon-1" src="https://cdn-icons-png.flaticon.com/128/4814/4814268.png" alt="Sunny">
+        <p id="forecast-temp-1">85°F / 65°F</p>
       </div>
-      <div class="forecast-day">
-        <h4 id="day-2">Wednesday</h4>
-        <div id="forecast-icon-2" class="forecast-icon"></div>
-        <p id="forecast-temp-2">70°F / 50°F</p>
+      <div class="forecast-day" id="forecast-day-2">
+        <h4 id="day-2">Tuesday</h4>
+        <img id="forecast-icon-2" src="https://cdn-icons-png.flaticon.com/128/1163/1163624.png" alt="Cloudy">
+        <p id="forecast-temp-2">78°F / 60°F</p>
       </div>
-      <div class="forecast-day">
-        <h4 id="day-3">Thursday</h4>
-        <div id="forecast-icon-3" class="forecast-icon"></div>
-        <p id="forecast-temp-3">80°F / 60°F</p>
+      <div class="forecast-day" id="forecast-day-3">
+        <h4 id="day-3">Wednesday</h4>
+        <img id="forecast-icon-3" src="https://cdn-icons-png.flaticon.com/128/4088/4088981.png" alt="Rainy">
+        <p id="forecast-temp-3">72°F / 58°F</p>
       </div>
-      <div class="forecast-day">
-        <h4 id="day-4">Friday</h4>
-        <div id="forecast-icon-4" class="forecast-icon"></div>
-        <p id="forecast-temp-4">90°F / 70°F</p>
+      <div class="forecast-day" id="forecast-day-4">
+        <h4 id="day-4">Thursday</h4>
+        <img id="forecast-icon-4" src="https://cdn-icons-png.flaticon.com/128/1779/1779927.png" alt="Thunderstorm">
+        <p id="forecast-temp-4">70°F / 55°F</p>
       </div>
-      <div class="forecast-day">
-        <h4 id="day-5">Saturday</h4>
-        <div id="forecast-icon-5" class="forecast-icon"></div>
-        <p id="forecast-temp-5">75°F / 55°F</p>
+      <div class="forecast-day" id="forecast-day-5">
+        <h4 id="day-5">Friday</h4>
+        <img id="forecast-icon-5" src="https://cdn-icons-png.flaticon.com/128/4814/4814268.png" alt="Sunny">
+        <p id="forecast-temp-5">80°F / 62°F</p>
       </div>
     </div>
   </div>
 </section>
+<script>
+  const weatherConditions = [
+    { description: 'Sunny', icon: 'https://cdn-icons-png.flaticon.com/128/4814/4814268.png', minTemp: 70, maxTemp: 90 },
+    { description: 'Cloudy', icon: 'https://cdn-icons-png.flaticon.com/128/1163/1163624.png', minTemp: 60, maxTemp: 80 },
+    { description: 'Rainy', icon: 'https://cdn-icons-png.flaticon.com/128/4088/4088981.png', minTemp: 50, maxTemp: 70 },
+    { description: 'Thunderstorm', icon: 'https://cdn-icons-png.flaticon.com/128/1779/1779927.png', minTemp: 55, maxTemp: 75 }
+  ];
 
+  function getRandomWeather() {
+    const condition = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
+    const currentTemp = Math.floor(Math.random() * (condition.maxTemp - condition.minTemp + 1) + condition.minTemp);
+    return { ...condition, currentTemp };
+  }
+
+  function updateWeather() {
+    const currentWeather = getRandomWeather();
+    document.getElementById('current-weather').textContent = `${currentWeather.description}, ${currentWeather.currentTemp}°F`;
+    document.getElementById('current-weather-icon').src = currentWeather.icon;
+
+    for (let i = 1; i <= 5; i++) {
+      const forecastWeather = getRandomWeather();
+      const dayElement = document.getElementById(`day-${i}`);
+      const iconElement = document.getElementById(`forecast-icon-${i}`);
+      const tempElement = document.getElementById(`forecast-temp-${i}`);
+      
+      dayElement.textContent = new Date(Date.now() + i * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { weekday: 'long' });
+      iconElement.src = forecastWeather.icon;
+      tempElement.textContent = `${forecastWeather.maxTemp}°F / ${forecastWeather.minTemp}°F`;
+    }
+  }
+
+  setInterval(updateWeather, 5000); // Update weather every 5 seconds
+  updateWeather(); // Initial call to display weather
+</script>
 	<section class="advisory-section">
   <div class="container">
     <h2>Travel Advisory and Alerts</h2>
