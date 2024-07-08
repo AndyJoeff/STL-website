@@ -7873,6 +7873,13 @@ div#shopify-section-feature-columns {
   font-size: 1em;
   margin-top: 10px;
 }
+/* Countdown timer styling */
+.countdown {
+  margin-top: 10px;
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 0.9em;
+}
 /* Responsive Styling */
 @media (max-width: 768px) {
   .hero-section {
