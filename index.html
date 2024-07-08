@@ -1244,45 +1244,44 @@ for (var attr in meta) {
     </div>
   </section>
 	<script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Function to fetch and update flight data
-      function updateFlightData() {
-        // Simulated flight data - in real application, fetch from an API
-        const flightData = [
-          { flight: 'AA123', airline: 'American Airlines', destination: 'New York (JFK)', departure: '08:00 AM', status: 'On Time' },
-          { flight: 'DL456', airline: 'Delta Airlines', destination: 'Atlanta (ATL)', departure: '08:30 AM', status: 'Delayed' },
-          { flight: 'UA789', airline: 'United Airlines', destination: 'Chicago (ORD)', departure: '09:00 AM', status: 'Cancelled' },
-	  { flight: 'AA123', airline: 'American Airlines', destination: 'New York (JFK)', departure: '08:00 AM', status: 'On Time' },
-          { flight: 'DL456', airline: 'Delta Airlines', destination: 'Atlanta (ATL)', departure: '08:30 AM', status: 'Delayed' },
-          { flight: 'UA789', airline: 'United Airlines', destination: 'Chicago (ORD)', departure: '09:00 AM', status: 'Cancelled' }
-		
-        ];
+   document.addEventListener("DOMContentLoaded", () => {
+  // Function to fetch and update flight data
+  function updateFlightData() {
+    // Simulated dynamic flight data
+    const statuses = ['On Time', 'Delayed', 'Cancelled'];
+    const getRandomStatus = () => statuses[Math.floor(Math.random() * statuses.length)];
+    
+    const flightData = [
+      { flight: 'AA123', airline: 'American Airlines', destination: 'New York (JFK)', departure: '08:00 AM', status: getRandomStatus() },
+      { flight: 'DL456', airline: 'Delta Airlines', destination: 'Atlanta (ATL)', departure: '08:30 AM', status: getRandomStatus() },
+      { flight: 'UA789', airline: 'United Airlines', destination: 'Chicago (ORD)', departure: '09:00 AM', status: getRandomStatus() }
+    ];
 
-        // Update the table with new flight data
-        const flightTableBody = document.getElementById('flight-data');
-        flightTableBody.innerHTML = '';
+    // Update the table with new flight data
+    const flightTableBody = document.getElementById('flight-data');
+    flightTableBody.innerHTML = '';
 
-        flightData.forEach(flight => {
-          const row = document.createElement('tr');
+    flightData.forEach(flight => {
+      const row = document.createElement('tr');
 
-          row.innerHTML = `
-            <td>${flight.flight}</td>
-            <td>${flight.airline}</td>
-            <td>${flight.destination}</td>
-            <td>${flight.departure}</td>
-            <td><span class="status-badge ${flight.status.toLowerCase().replace(' ', '-')}">${flight.status}</span></td>
-          `;
+      row.innerHTML = `
+        <td>${flight.flight}</td>
+        <td>${flight.airline}</td>
+        <td>${flight.destination}</td>
+        <td>${flight.departure}</td>
+        <td><span class="status-badge ${flight.status.toLowerCase().replace(' ', '-')}">${flight.status}</span></td>
+      `;
 
-          flightTableBody.appendChild(row);
-        });
-      }
-
-      // Initial load
-      updateFlightData();
-
-      // Update flight data every 30 seconds
-      setInterval(updateFlightData, 30000);
+      flightTableBody.appendChild(row);
     });
+  }
+
+  // Initial load
+  updateFlightData();
+
+  // Update flight data every 30 seconds
+  setInterval(updateFlightData, 30000);
+});
   </script>
         <section class="weather-updates-section">
     <div class="container">
