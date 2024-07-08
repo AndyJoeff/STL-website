@@ -1182,10 +1182,9 @@ for (var attr in meta) {
   </section>
 
  
-        <section class="flight-info-section">
+     <section class="flight-info-section">
     <div class="container">
       <h2>Real-Time Flight Information</h2>
-      <p class="scroll-note">Swipe left to view more flight details</p>
       <table class="flight-table">
         <thead>
           <tr>
@@ -1196,53 +1195,90 @@ for (var attr in meta) {
             <th>Status</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
+        <tbody id="flight-data">
+                    <tr>
             <td>AA123</td>
             <td>American Airlines</td>
             <td>New York (JFK)</td>
             <td>08:00 AM</td>
-            <td>On Time</td>
+            <td><span class="status-badge on-time">On Time</span></td>
           </tr>
           <tr>
             <td>DL456</td>
             <td>Delta Airlines</td>
             <td>Atlanta (ATL)</td>
             <td>08:30 AM</td>
-            <td>Delayed</td>
+            <td><span class="status-badge delayed">Delayed</span></td>
           </tr>
           <tr>
             <td>UA789</td>
             <td>United Airlines</td>
             <td>Chicago (ORD)</td>
             <td>09:00 AM</td>
-            <td>Cancelled</td>
+            <td><span class="status-badge cancelled">Cancelled</span></td>
           </tr>
           <tr>
             <td>AA123</td>
             <td>American Airlines</td>
             <td>New York (JFK)</td>
             <td>08:00 AM</td>
-            <td>On Time</td>
+            <td><span class="status-badge on-time">On Time</span></td>
           </tr>
           <tr>
             <td>DL456</td>
             <td>Delta Airlines</td>
             <td>Atlanta (ATL)</td>
             <td>08:30 AM</td>
-            <td>Delayed</td>
+            <td><span class="status-badge delayed">Delayed</span></td>
           </tr>
           <tr>
             <td>UA789</td>
             <td>United Airlines</td>
             <td>Chicago (ORD)</td>
             <td>09:00 AM</td>
-            <td>Cancelled</td>
+            <td><span class="status-badge cancelled">Cancelled</span></td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
+	<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Function to fetch and update flight data
+      function updateFlightData() {
+        // Simulated flight data - in real application, fetch from an API
+        const flightData = [
+          { flight: 'AA123', airline: 'American Airlines', destination: 'New York (JFK)', departure: '08:00 AM', status: 'On Time' },
+          { flight: 'DL456', airline: 'Delta Airlines', destination: 'Atlanta (ATL)', departure: '08:30 AM', status: 'Delayed' },
+          { flight: 'UA789', airline: 'United Airlines', destination: 'Chicago (ORD)', departure: '09:00 AM', status: 'Cancelled' }
+        ];
+
+        // Update the table with new flight data
+        const flightTableBody = document.getElementById('flight-data');
+        flightTableBody.innerHTML = '';
+
+        flightData.forEach(flight => {
+          const row = document.createElement('tr');
+
+          row.innerHTML = `
+            <td>${flight.flight}</td>
+            <td>${flight.airline}</td>
+            <td>${flight.destination}</td>
+            <td>${flight.departure}</td>
+            <td><span class="status-badge ${flight.status.toLowerCase().replace(' ', '-')}">${flight.status}</span></td>
+          `;
+
+          flightTableBody.appendChild(row);
+        });
+      }
+
+      // Initial load
+      updateFlightData();
+
+      // Update flight data every 30 seconds
+      setInterval(updateFlightData, 30000);
+    });
+  </script>
         <section class="weather-updates-section">
     <div class="container">
       <h2>Weather Updates</h2>
