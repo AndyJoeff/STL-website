@@ -1327,6 +1327,40 @@ for (var attr in meta) {
     </div>
   </div>
 </section>
+	<script>
+  const weatherConditions = [
+    { description: 'Sunny', icon: 'https://cdn-icons-png.flaticon.com/128/4814/4814268.png', minTemp: 70, maxTemp: 90 },
+    { description: 'Cloudy', icon: 'https://cdn-icons-png.flaticon.com/128/1163/1163624.png', minTemp: 60, maxTemp: 80 },
+    { description: 'Rainy', icon: 'https://cdn-icons-png.flaticon.com/128/4088/4088981.png', minTemp: 50, maxTemp: 70 },
+    { description: 'Thunderstorm', icon: 'https://cdn-icons-png.flaticon.com/128/1779/1779927.png', minTemp: 55, maxTemp: 75 }
+  ];
+
+  function getRandomWeather() {
+    const condition = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
+    const currentTemp = Math.floor(Math.random() * (condition.maxTemp - condition.minTemp + 1) + condition.minTemp);
+    return { ...condition, currentTemp };
+  }
+
+  function updateWeather() {
+    const currentWeather = getRandomWeather();
+    document.getElementById('current-weather').textContent = `${currentWeather.description}, ${currentWeather.currentTemp}°F`;
+    document.getElementById('current-weather-icon').src = currentWeather.icon;
+
+    for (let i = 1; i <= 5; i++) {
+      const forecastWeather = getRandomWeather();
+      const dayElement = document.getElementById(`day-${i}`);
+      const iconElement = document.getElementById(`forecast-icon-${i}`);
+      const tempElement = document.getElementById(`forecast-temp-${i}`);
+      
+      dayElement.textContent = new Date(Date.now() + i * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { weekday: 'long' });
+      iconElement.src = forecastWeather.icon;
+      tempElement.textContent = `${forecastWeather.maxTemp}°F / ${forecastWeather.minTemp}°F`;
+    }
+  }
+
+  setInterval(updateWeather, 5000); // Update weather every 5 seconds
+  updateWeather(); // Initial call to display weather
+</script>
 	<section class="advisory-section">
   <div class="container">
     <h2>Travel Advisory and Alerts</h2>
