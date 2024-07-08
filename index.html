@@ -1286,47 +1286,47 @@ for (var attr in meta) {
   setInterval(updateFlightData, 10000);
 });
   </script>
-        <section class="weather-updates-section">
-    <div class="container">
-      <h2>Weather Updates</h2>
-      <div class="current-weather">
-        <div class="weather-icon">
-          <img src="https://cdn-icons-png.flaticon.com/128/4814/4814268.png" alt="Current Weather">
-        </div>
-        <div class="weather-details">
-          <h3>St. Louis, MO</h3>
-          <p>Sunny, 85°F</p>
-        </div>
+       <section class="weather-updates-section">
+  <div class="container">
+    <h2>Weather Updates</h2>
+    <div class="current-weather">
+      <div class="weather-icon">
+        <img id="current-weather-icon" src="https://cdn-icons-png.flaticon.com/128/4814/4814268.png" alt="Current Weather">
       </div>
-      <div class="weather-forecast">
-        <div class="forecast-day">
-          <h4>Monday</h4>
-          <img src="https://cdn-icons-png.flaticon.com/128/4814/4814268.png" alt="Sunny">
-          <p>85°F / 65°F</p>
-        </div>
-        <div class="forecast-day">
-          <h4>Tuesday</h4>
-          <img src="https://cdn-icons-png.flaticon.com/128/1163/1163624.png" alt="Cloudy">
-          <p>78°F / 60°F</p>
-        </div>
-        <div class="forecast-day">
-          <h4>Wednesday</h4>
-          <img src="https://cdn-icons-png.flaticon.com/128/4088/4088981.png" alt="Rainy">
-          <p>72°F / 58°F</p>
-        </div>
-        <div class="forecast-day">
-          <h4>Thursday</h4>
-          <img src="https://cdn-icons-png.flaticon.com/128/1779/1779927.png" alt="Thunderstorm">
-          <p>70°F / 55°F</p>
-        </div>
-        <div class="forecast-day">
-          <h4>Friday</h4>
-          <img src="https://cdn-icons-png.flaticon.com/128/4814/4814268.png" alt="Sunny">
-          <p>80°F / 62°F</p>
-        </div>
+      <div class="weather-details">
+        <h3 id="current-location">St. Louis, MO</h3>
+        <p id="current-weather">Sunny, 85°F</p>
       </div>
     </div>
-  </section>
+    <div class="weather-forecast" id="forecast-container">
+      <div class="forecast-day" id="forecast-day-1">
+        <h4 id="day-1">Monday</h4>
+        <img id="forecast-icon-1" src="https://cdn-icons-png.flaticon.com/128/4814/4814268.png" alt="Sunny">
+        <p id="forecast-temp-1">85°F / 65°F</p>
+      </div>
+      <div class="forecast-day" id="forecast-day-2">
+        <h4 id="day-2">Tuesday</h4>
+        <img id="forecast-icon-2" src="https://cdn-icons-png.flaticon.com/128/1163/1163624.png" alt="Cloudy">
+        <p id="forecast-temp-2">78°F / 60°F</p>
+      </div>
+      <div class="forecast-day" id="forecast-day-3">
+        <h4 id="day-3">Wednesday</h4>
+        <img id="forecast-icon-3" src="https://cdn-icons-png.flaticon.com/128/4088/4088981.png" alt="Rainy">
+        <p id="forecast-temp-3">72°F / 58°F</p>
+      </div>
+      <div class="forecast-day" id="forecast-day-4">
+        <h4 id="day-4">Thursday</h4>
+        <img id="forecast-icon-4" src="https://cdn-icons-png.flaticon.com/128/1779/1779927.png" alt="Thunderstorm">
+        <p id="forecast-temp-4">70°F / 55°F</p>
+      </div>
+      <div class="forecast-day" id="forecast-day-5">
+        <h4 id="day-5">Friday</h4>
+        <img id="forecast-icon-5" src="https://cdn-icons-png.flaticon.com/128/4814/4814268.png" alt="Sunny">
+        <p id="forecast-temp-5">80°F / 62°F</p>
+      </div>
+    </div>
+  </div>
+</section>
 	<section class="advisory-section">
   <div class="container">
     <h2>Travel Advisory and Alerts</h2>
