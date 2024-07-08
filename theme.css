@@ -7661,6 +7661,14 @@ hr {
     opacity: 0.5;
   }
 }
+/* Note styling */
+.scroll-note {
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+  margin: 0 0 10px;
+  display: none;
+}
 
 /* Responsive styling */
 @media (max-width: 768px) {
